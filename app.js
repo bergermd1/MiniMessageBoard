@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const path = require('node:path');
 const router = require('./routes/pageRouter')
+const port = process.env.PORT || 3000;
+
 app.use(express.urlencoded({ extended: true }));
 
 app.set('views', path.join(__dirname, 'views'));
@@ -12,4 +14,4 @@ app.use('/', router);
 //     res.render('index', { title: 'index', messages: messages });
 // })
 
-app.listen(3000);
+app.listen(port);
