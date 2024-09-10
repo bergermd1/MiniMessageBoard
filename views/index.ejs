@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>
+            <%= title %>
+        </title>
+    </head>
+    <body>
+        <% messages.forEach((message, i) => { %> 
+            Message: <%= i + 1 %>
+            <ul>
+                <li>Text: <%= message.text %></li>
+                <li>User: <%= message.user %></li>
+                <li>Date: <%= message.added %></li>
+                <a href="/message/<%=i%>">View message</a>
+                 <!-- <form action="/message" method="POST">
+                    <input type="hidden" name="id" value=<%=i%>><br>
+                    <button type="submit">View Message</button>
+                 </form> -->
+            </ul>
+        <% }) %>
+        <a href="./new">Add message here</a>
+    </body>
+</html>
